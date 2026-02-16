@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#gallery">Skip to gallery</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">My Portfolio</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="gallery" class="container">
+    <h1>Gallery</h1>
+    <p class="lead">Click an image to open it in a lightbox. Use arrow keys to navigate and Esc to close.</p>
+
+    <ul class="gallery-grid" aria-label="Image gallery">
+      <li>
+        <figure>
+          <button class="thumb" data-index="0">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=60&auto=format&fit=crop" alt="Mountain landscape at sunset">
+          </button>
+          <figcaption>Mountain sunset</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="thumb" data-index="1">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&q=60&auto=format&fit=crop" alt="Forest path in autumn">
+          </button>
+          <figcaption>Forest path</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="thumb" data-index="2">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=60&auto=format&fit=crop" alt="Seaside cliffs with waves">
+          </button>
+          <figcaption>Coastal cliffs</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <button class="thumb" data-index="3">
+            <img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3?w=800&q=60&auto=format&fit=crop" alt="City skyline at dusk">
+          </button>
+          <figcaption>City skyline</figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <button class="lb-close" aria-label="Close">×</button>
+      <button class="lb-prev" aria-label="Previous image">‹</button>
+      <div class="lb-content">
+        <img src="" alt="" />
+        <p class="lb-caption"></p>
+      </div>
+      <button class="lb-next" aria-label="Next image">›</button>
+    </div>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2026 My Portfolio</small>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</body>
+</html>
