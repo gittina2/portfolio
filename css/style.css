@@ -152,7 +152,8 @@ body{
   font-size: 1.4rem;
   font-weight: 500;
   background: rgba(0,0,0,0.4);
-  color: var(--text)
+  color: var(--text);
+  display: inline-block
 }
 
 /* link card */
@@ -162,10 +163,17 @@ body{
   position: relative       /* necessario per titolo assoluto */
 }
 
-/* hover */
-.project-link:hover h3 {
-  background: var(--accent); /* aranciato leggero come nav hover */
-  color: var(--text)                   
+.project-card h3::after {
+  content: "";
+  display: block;
+  height: 3px;                /* spessore sottolineatura */
+  width: 0;                    /* parte iniziale */
+  background: var(--accent);   /* colore arancio */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.project-link:hover h3::after {
+  width: 100%;                 /* sottolineatura si espande */
 }
 
 /* ==========================
