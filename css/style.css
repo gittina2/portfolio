@@ -1,8 +1,9 @@
 :root {
   --bg: #1a1b1d;
   --header-bg: #006b80;
-  --card: #161a22;
+  --card: #202224;
   --text: #e6e6e6;
+  --accent: #c1744f; 
   --radius:12px;
   --gap: 1.25rem;
   --container:1200px;
@@ -46,7 +47,7 @@ body{
   text-decoration:none
 }
 .primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
-.primary-nav a{color:inherit;text-decoration:none;padding:.35rem .5rem;border-radius:6px}
+.primary-nav a{color: var(--accent);text-decoration:none;padding:.35rem .5rem;border-radius:6px}
 .primary-nav a:focus,.primary-nav a:hover{background:rgba(0,0,0,0.05);outline:none}
 .nav-toggle{display:none;background:transparent;border:0;color:inherit}
 .hamburger{display:inline-block;width:22px;height:2px;background:currentColor;position:relative}
@@ -119,7 +120,15 @@ body{
   border-radius:8px
 }
 .lb-caption{color:var(--muted);margin-top:.5rem}
-.lb-close,.lb-prev,.lb-next{position:fixed;background:rgba(255,255,255,0.9);border:0;color:#1f2937;font-size:1.5rem;padding:.5rem;border-radius:6px}
+.lb-close,.lb-prev,.lb-next{
+  position:fixed;
+  background:rgba(255,255,255,0.9);
+  border:0;
+  color: var(--accent);
+  font-size:1.5rem;
+  padding:.5rem;
+  border-radius:6px
+}
 .lb-close{right:1rem;top:1rem}
 .lb-prev{left:1rem;top:50%;transform:translateY(-50%)}
 .lb-next{right:1rem;top:50%;transform:translateY(-50%)}
