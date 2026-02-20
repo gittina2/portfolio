@@ -1,5 +1,5 @@
 :root {
-  --bg: #1a1b1d;
+  --bg: #202224;
   --header-bg: #006b80;
   --card: #202224;
   --text: #e6e6e6;
@@ -47,8 +47,16 @@ body{
   text-decoration:none
 }
 .primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
-.primary-nav a{color: var(--accent);text-decoration:none;padding:.35rem .5rem;border-radius:6px}
-.primary-nav a:focus,.primary-nav a:hover{background:rgba(0,0,0,0.05);outline:none}
+.primary-nav a{
+  color: var(--accent);
+  text-decoration:none;padding:.35rem .5rem;
+  border-radius:6px
+}
+.primary-nav a:focus,.primary-nav a:hover{
+  background:rgba(0,0,0,0.05);
+  outline:none
+}
+
 .nav-toggle{display:none;background:transparent;border:0;color:inherit}
 .hamburger{display:inline-block;width:22px;height:2px;background:currentColor;position:relative}
 .hamburger:before,.hamburger:after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor}
