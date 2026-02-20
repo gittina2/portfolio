@@ -141,6 +141,7 @@ body{
 .project-card:hover img {
   transform: scale(1.02);
   opacity: 0.95;
+  border-radius: var(--radius)
 }
 
 .project-card h3 {
