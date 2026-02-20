@@ -43,17 +43,18 @@ body{
 .brand{
   gap:var(--gap);
   font-weight:700;
-  color:var(--accent);
   text-decoration:none
 }
+
 .primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+
 .primary-nav a{
-  color: var(--accent);
-  text-decoration:none;padding:.35rem .5rem;
+  text-decoration:none;
+  padding:.35rem .5rem;
   border-radius:6px
 }
 .primary-nav a:focus,.primary-nav a:hover{
-  background:rgba(0,0,0,0.05);
+  color:var(--accent);
   outline:none
 }
 
