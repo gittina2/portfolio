@@ -151,12 +151,12 @@ body{
   margin-top: 1rem;
   font-size: 1.4rem;
   font-weight: 500;
-  background: rgba(0,0,0,0.4)
+  background: rgba(0,0,0,0.4);
+  color: var(--text);
 }
 
 /* link card */
 .project-link {
-  color: white;               /* testo bianco di base */
   text-decoration: none;      /* niente sottolineatura */
   display: block;             /* riempie tutta la card */
   position: relative       /* necessario per titolo assoluto */
@@ -164,8 +164,8 @@ body{
 
 /* hover */
 .project-link:hover h3 {
-  background: rgba(193, 116, 79, 0.6); /* aranciato leggero come nav hover */
-  color: white                     /* titolo resta leggibile */
+  background: var(--accent); /* aranciato leggero come nav hover */
+  color: var(--text)                   
 }
 
 /* ==========================
