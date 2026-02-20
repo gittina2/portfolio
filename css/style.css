@@ -41,6 +41,7 @@ body{
 }
 
 .brand{
+  color:var(--text);
   gap:var(--gap);
   font-weight:700;
   text-decoration:none
