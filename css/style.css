@@ -154,6 +154,20 @@ body{
   background: rgba(0,0,0,0.4)
 }
 
+/* link card */
+.project-link {
+  color: white;               /* testo bianco di base */
+  text-decoration: none;      /* niente sottolineatura */
+  display: block;             /* riempie tutta la card */
+  position: relative;         /* necessario per titolo assoluto */
+}
+
+/* hover */
+.project-link:hover h3 {
+  background: rgba(193, 116, 79, 0.6); /* aranciato leggero come nav hover */
+  color: white;                        /* titolo resta leggibile */
+}
+
 /* ==========================
    Gallery di immagini
    - Griglia 4 colonne
