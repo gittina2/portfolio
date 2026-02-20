@@ -136,7 +136,7 @@ body{
   height: 450px;
   object-fit: cover;
   border-radius: inherit;
-  transition: transform .3s ease, opacity .3s ease;
+  transition: transform .3s ease, opacity .3s ease
 }
 
 .project-card:hover img {
@@ -159,13 +159,13 @@ body{
   color: white;               /* testo bianco di base */
   text-decoration: none;      /* niente sottolineatura */
   display: block;             /* riempie tutta la card */
-  position: relative;         /* necessario per titolo assoluto */
+  position: relative       /* necessario per titolo assoluto */
 }
 
 /* hover */
 .project-link:hover h3 {
   background: rgba(193, 116, 79, 0.6); /* aranciato leggero come nav hover */
-  color: white;                        /* titolo resta leggibile */
+  color: white                     /* titolo resta leggibile */
 }
 
 /* ==========================
