@@ -1,3 +1,9 @@
+/* ==========================
+   :root — Variabili globali
+   Definiscono colori, dimensioni e gap standard del sito.
+   Cambiandole, l’intero design si aggiorna in modo coerente.
+========================== */
+
 :root {
   --bg: #202224;
   --header-bg: #006b80;
@@ -9,6 +15,12 @@
   --container:1200px;
 }
 
+/* ==========================
+   Reset globale e body
+   - box-sizing: include padding e border nella larghezza
+   - font e sfondo di default
+========================== */
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -18,9 +30,18 @@ body{
   color:var(--text);
   -webkit-font-smoothing:antialiased;
 }
-.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
-.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
 
+/* ==========================
+   Container centrale
+   Centra il contenuto e aggiunge padding orizzontale
+========================== */
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+
+/* ==========================
+   Skip link per accessibilità
+   Permette agli utenti da tastiera di saltare subito al contenuto principale
+========================== */
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
 .skip-link:focus{
   left:1rem;
   top:1rem;
@@ -31,6 +52,10 @@ body{
   border-radius:6px
 }
 
+/* ==========================
+   Skip link per accessibilità
+   Permette agli utenti da tastiera di saltare subito al contenuto principale
+========================== */
 .site-header{background:var(--header-bg)}
 
 .header-inner{
@@ -47,6 +72,18 @@ body{
   text-decoration:none
 }
 
+.brand:hover,
+.brand:focus {
+  color:var(--accent);
+  outline:none
+}
+
+/* ==========================
+   Navigation principale
+   - Lista link orizzontale
+   - Hover/focus con sfondo leggermente aranciato
+========================== */
+
 .primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
 
 .primary-nav a{
@@ -61,12 +98,23 @@ body{
   outline:none
 }
 
+/* ==========================
+   Hamburger menu (mobile)
+   Tre linee per menu collapsible
+========================== */
+
 .nav-toggle{display:none;background:transparent;border:0;color:inherit}
 .hamburger{display:inline-block;width:22px;height:2px;background:currentColor;position:relative}
 .hamburger:before,.hamburger:after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor}
 .hamburger:before{top:-6px}
 .hamburger:after{bottom:-6px}
 
+/* ==========================
+   Hero section
+   - Testo centrale
+   - Lead secondario
+   - Pulsante con gradient
+========================== */
 .hero{padding:4rem 0;text-align:center}
 .hero .lead{color:var(--muted);max-width:60ch;margin:0 auto 1.25rem}
 .btn{display:inline-block;padding:.75rem 1.25rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#012; border-radius:999px;text-decoration:none;font-weight:600}
@@ -86,6 +134,12 @@ body{
   border-radius:var(--radius)
 }
 
+/* ==========================
+   Gallery di immagini
+   - Griglia 4 colonne
+   - Immagini con border-radius
+   - Focus accessibility
+========================== */
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -110,6 +164,12 @@ body{
 
 .thumb:focus img{outline:3px solid rgba(125,211,252,0.18)}
 
+/* ==========================
+   Lightbox
+   - Overlay full screen
+   - Visibile quando aria-hidden=false
+   - Contenitore e bottoni di navigazione
+========================== */
 .lightbox{
   position:fixed;
   inset:0;
@@ -145,8 +205,16 @@ body{
 .lb-prev{left:1rem;top:50%;transform:translateY(-50%)}
 .lb-next{right:1rem;top:50%;transform:translateY(-50%)}
 
+/* ==========================
+   Footer
+========================== */
+
 .site-footer{padding:2rem 0;text-align:center;color:var(--muted)}
 
+
+/* ==========================
+   Media queries per responsive design
+========================== */
 @media (max-width:900px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
@@ -161,6 +229,8 @@ body{
   .gallery-grid img{height:160px}
 }
 
-/* focus outline for keyboard users */
+/* ==========================
+   Focus outline per accessibilità
+========================== */
 :where(button, a){outline: none}
 :where(button, a):focus-visible{outline:3px solid rgba(96,165,250,0.18);outline-offset:2px}
