@@ -10,14 +10,15 @@ const galleryGrid = document.querySelector('.gallery-grid');
 if (galleryGrid) {
   let html = '';
   for (let i = 1; i <= IMAGE_COUNT; i++) {
-    const imgName = `${IMAGE_PREFIX}${i}.jpg`;
+    const publicId = `${FOLDER}${IMAGE_PREFIX}${String(i).padStart(2,'0')}`;
     // Cloudinary thumbnail transformation (w_300)
-    const thumbUrl = `${CLOUD_BASE}w_300/${FOLDER}${imgName}`;
+    const thumbUrl = `${CLOUD_BASE}w_300,q_auto,f_auto/${publicId}.jpg`;
     // Full-size image (no transformation)
-    const fullUrl = `${CLOUD_BASE}${FOLDER}${imgName}`;
+    const fullUrl = `${CLOUD_BASE}w_1200,q_auto,f_auto/${publicId}.jpg`;
+
     html += `
-      <a href="${fullUrl}" data-caption="${imgName}">
-        <img src="${thumbUrl}" alt="${imgName}" loading="lazy" />
+      <a href="${fullUrl}" data-caption="${IMAGE_PREFIX}${i}">
+        <img src="${thumbUrl}" alt="${IMAGE_PREFIX}${i}" loading="lazy" />
       </a>
     `;
   }
