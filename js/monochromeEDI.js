@@ -1,12 +1,12 @@
 
-const CLOUD_BASE = "https://res.cloudinary.com/dqyfoxlko/image/upload/";
+const CLOUD_BASE = "https://res.cloudinary.com/dqyfoxlko/image/upload//v1771944556/";
 const FOLDER = "BN_edi/";
 
 // Dynamically generate gallery grid
 
 const images = [
-  "bn_18_tk715v",
-  "bn_17_pr0mpf"
+  `${CLOUD_BASE}w_300,q_auto,f_auto/bn_18_tk715v.jpg`,
+  `${CLOUD_BASE}w_300,q_auto,f_auto/bn_17_pr0mpf.jpg`
 ];
 
 const galleryGrid = document.querySelector('.gallery-grid');
