@@ -1,30 +1,26 @@
 
 const CLOUD_BASE = "https://res.cloudinary.com/dqyfoxlko/image/upload/";
 const FOLDER = "BN_edi/";
-const IMAGE_PREFIX = "bn_";
-const IMAGE_COUNT = 18;
 
 // Dynamically generate gallery grid
+
+const images = [
+  "bn_18_tk715v",
+  "bn_17_pr0mpf"
+];
 
 const galleryGrid = document.querySelector('.gallery-grid');
 if (galleryGrid) {
   let html = '';
-  for (let i = 1; i <= IMAGE_COUNT; i++) {
-    const publicId = `${FOLDER}${IMAGE_PREFIX}${String(i).padStart(2,'0')}`;
-    // Cloudinary thumbnail transformation (w_300)
-    const thumbUrl = `${CLOUD_BASE}w_300,q_auto,f_auto/${publicId}.jpg`;
-    // Full-size image (no transformation)
-    const fullUrl = `${CLOUD_BASE}w_1200,q_auto,f_auto/${publicId}.jpg`;
-
+  images.forEach((url, i) => {
     html += `
-      <a href="${fullUrl}" data-caption="${IMAGE_PREFIX}${i}">
-        <img src="${thumbUrl}" alt="${IMAGE_PREFIX}${i}" loading="lazy" />
+      <a href="${url}" data-caption="Foto ${i + 1}">
+        <img src="${url}" alt="Foto ${i + 1}" loading="lazy" />
       </a>
     `;
-  }
+  });
   galleryGrid.innerHTML = html;
 }
-
 
 // Lightweight accessible lightbox for the gallery
 document.addEventListener('DOMContentLoaded', () => {
