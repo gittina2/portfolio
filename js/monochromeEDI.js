@@ -1,5 +1,5 @@
 
-const CLOUD_BASE = "https://res.cloudinary.com/dqyfoxlko/image/upload//v1771944556/";
+const CLOUD_BASE = "https://res.cloudinary.com/dqyfoxlko/image/upload/v1771944556/";
 const FOLDER = "BN_edi/";
 
 // Dynamically generate gallery grid
