@@ -1,4 +1,6 @@
 // Main UI scripts: mobile nav toggle and accessible helpers
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const primaryNav = document.getElementById('primary-nav');
