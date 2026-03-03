@@ -321,20 +321,59 @@ body{
    - Focus accessibility
 ========================== */
 .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:var(--gap);
-  padding:0;
-  grid-auto-rows: 10px;
-  list-style:none
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1200px;   /* o 1100px se la vuoi più elegante */
+  margin: 0 auto;      /* centra orizzontalmente */
+  padding: 0 1rem; 
+}
+
+.gallery-grid a {
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  position: relative;
 }
 
 .gallery-grid img{
   width:100%;
   height:auto;
-  object-fit:cover;
   border-radius:8px;
   display:block
+}
+
+.full {
+  grid-column: span 3;
+}
+
+.super-wide {
+  grid-column: span 3;
+  height: 240px;
+  overflow: hidden;
+}
+
+.super-wide img {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.two-thirds {
+  grid-column: span 2;
+}
+
+.one-third-fill {
+  grid-column: span 1;
+}
+
+.one-third-fill img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.row-group a {
+  display:block;
 }
 
 .thumb{border:0;

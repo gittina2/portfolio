@@ -75,9 +75,27 @@ albumName.textContent = albumNames[album] || album;
 fetch(`/api/album/${album}`)
   .then(res => res.json())
   .then(images => {
-    gallery.innerHTML = images.map(img => `
-      <a href="${img.url}" data-caption="${img.name}">
-        <img src="${img.url}" alt="${img.name}" loading="lazy">
-      </a>
-    `).join('');
+
+    const pattern = [
+      'full',
+      '',
+      '',
+      '',
+      'super-wide',
+      'two-thirds',
+      'one-third-fill'
+    ];
+
+    gallery.innerHTML = images.map((img, index) => {
+
+      const cls = pattern[index % pattern.length];
+
+      return `
+        <a href="${img.url}" class="${cls}">
+          <img src="${img.url}" alt="${img.name}" loading="lazy">
+        </a>
+      `;
+    }).join('');
+
   });
+  
