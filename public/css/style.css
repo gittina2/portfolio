@@ -84,7 +84,7 @@ body{
    - Hover/focus con sfondo leggermente aranciato
 ========================== */
 
-.primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.primary-nav > ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
 
 .primary-nav a{
   color:var(--text);
@@ -96,6 +96,77 @@ body{
 .primary-nav a:hover{
   color:var(--accent);
   outline:none
+}
+
+/* Theme dropdown menu */
+.nav-theme {
+  position: relative;
+}
+
+.theme-toggle {
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: .35rem .5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle:focus,
+.theme-toggle:hover {
+  color: var(--accent);
+  outline: none;
+}
+
+.theme-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  padding: 0.5rem 0;
+  background: var(--card);
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  max-width: 200px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+.theme-menu[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.theme-menu a {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+}
+
+.theme-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-menu a:hover,
+.theme-menu a:focus {
+  background-color: rgba(193, 116, 79, 0.2);
+  color: var(--accent);
+  outline: none;
 }
 
 /* ==========================
@@ -150,7 +221,7 @@ body{
 .divider {
   width: 60px;
   height: 2px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   background-color: var(--accent); /* il tuo arancione */
 }
 
@@ -158,54 +229,89 @@ body{
   padding: 0 2rem 8rem;
 }
 
+.projects-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
 .projects-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 /* Blocco album */
 .project {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  margin-bottom: 10rem;
-}
-
-/* Alternanza destra/sinistra */
-.project:nth-child(even) {
-  direction: rtl; /* immagine a destra, testo a sinistra */
-}
-
-.project:nth-child(even) .project-text {
-  direction: ltr; /* testo mantiene l’allineamento normale */
-}
-
-/* link  */
-.project-link {
-  text-decoration: none;      /* niente sottolineatura */
-  display: grid;            
-  position: relative       /* necessario per titolo assoluto */
-}
-
-.project-link:hover img {
-  transform: scale(1.02);
-  opacity: 0.95;
-}
-
-
-.project-link h3::after {
-  content: "";
   display: block;
-  height: 3px;                /* spessore sottolineatura */
-  width: 0;                    /* parte iniziale */
-  background: var(--accent);   /* colore arancio */
-  transition: width 0.3s ease;
-  border-radius: 2px;
+  margin-bottom: 2rem;
 }
 
-.project-link:hover h3::after {
+.project-image img {
   width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem; /* altezza area titolo */
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Wrapper titolo + freccia */
+.project-footer {
+  position: absolute;
+  bottom: 1rem;       /* distanza dal bordo inferiore */
+  left: 1rem;         /* distanza dal bordo sinistro */
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;       /* spazio tra titolo e freccia */
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Titolo */
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* Freccia */
+.project-arrow {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.85);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover sull’intera card */
+.project-link:hover .project-arrow {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+.project-link:hover img { 
+  transform: scale(1.02); 
+  opacity: 0.95; 
 }
 
 /* ==========================

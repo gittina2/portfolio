@@ -16,7 +16,14 @@
       </button>
       <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li class="nav-theme">
+            <button class="theme-toggle" aria-haspopup="true" aria-expanded="false">Theme</button>
+            <ul class="theme-menu" role="menu" data-open="false">
+              <li role="none"><a href="gallery.html?album=BN_edi" role="menuitem">Edinburgh</a></li>
+              <li role="none"><a href="gallery.html?album=highlands" role="menuitem">Highlands</a></li>
+              <li role="none"><a href="gallery.html?album=skye" role="menuitem">Skye</a></li>
+            </ul>
+          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -38,19 +45,58 @@
     </section>
 
     <section class="projects">
+      <h2 class="projects-title">Themes</h2>
+      <div class="divider"></div>
       <div class="projects-inner">
-        <article class="project">          
-          <a class="project-link" href="gallery.html?album=BN_edi" 
-              aria-label="View the Monochrome EDI album">
-            <div class="project-image">
+        <article class="project">    
+          <div class="project-image">      
+            <a class="project-link" 
+                href="gallery.html?album=BN_edi" 
+                aria-label="View the Monochrome EDI album">
+                <span class="project-footer">
+                  <span class="project-title">Edinburgh</span>
+                  <span class="project-arrow">→</span>
+                </span>
                 <img src="https://res.cloudinary.com/dqyfoxlko/image/upload/v1771944556/bn_18_tk715v.jpg" 
-                alt="Paesaggio in bianco e nero avvolto dalla nebbia">
-            </div>
-            <div class="project-text">
-              <h3>B&W Edimburgh</h3>
-            </div>
-          </a>    
+                      alt="Paesaggio in bianco e nero avvolto dalla nebbia">
+            </a>
+          </div>           
         </article>
+
+        <article class="project">    
+          <div class="project-image">      
+            <a class="project-link" 
+                href="gallery.html?album=highlands" 
+                aria-label="View the Highlands album">
+                
+                <span class="project-footer">
+                  <span class="project-title">Highlands</span>
+                  <span class="project-arrow">→</span>
+                </span>
+
+                <img src="https://res.cloudinary.com/dqyfoxlko/image/upload/v1771944587/highlands_04_hyoc5b.jpg" 
+                      alt="eilean donan castle in the scottish highlands with a dramatic sky">
+                
+            </a>
+          </div>            
+        </article>
+
+        <article class="project">    
+          <div class="project-image">      
+            <a class="project-link" 
+                href="gallery.html?album=skye" 
+                aria-label="View the skye album">
+                <span class="project-footer">
+                  <span class="project-title">Skye</span>
+                  <span class="project-arrow">→</span>
+                </span>
+                <img src="https://res.cloudinary.com/dqyfoxlko/image/upload/v1772207674/DSCF0945-1_apkzwy.jpg" 
+                      alt="nest point lighthouse">
+            </a>
+          </div>            
+        </article>
+        
+
     </section>
     
     <section id="contact" class="container contact" aria-labelledby="contact-heading">
