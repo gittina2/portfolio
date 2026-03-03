@@ -62,6 +62,15 @@ document.addEventListener('keydown', e => {
 
 const params = new URLSearchParams(window.location.search);
 const album = params.get('album') || 'BN_edi';
+const albumName = document.getElementById('album-name');
+
+const albumNames = {
+  BN_edi: "Monochrome EDI",
+  highlands: "Highlands",
+  skye: "Skye"
+};
+
+albumName.textContent = albumNames[album] || album;
 
 fetch(`/api/album/${album}`)
   .then(res => res.json())
